@@ -58,6 +58,7 @@ export default function PreviewProject() {
                   }, 100);
                 }}
               />
+              {/* TODO: Action.ShowInFinder is macOS-specific and doesn't exist on Windows. Use Action.Open or check the platform and conditionally show the appropriate action. */}
               <Action.ShowInFinder title="Show QR Code in Finder" path={qrcodePath} />
             </ActionPanel>
           }

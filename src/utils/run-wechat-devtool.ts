@@ -19,8 +19,6 @@ export async function runWechatDevtool(
 async function execCommand(cliPath: string, args: string[]): Promise<{ stdout: string; stderr: string }> {
   try {
     const command = buildCommand(cliPath, args);
-    // TODO:
-    console.log("🚀 ~ execCommand ~ command:", command);
     const { stdout, stderr } = await execAsync(command);
     return { stdout: stdout || "", stderr: stderr || "" };
     // eslint-disable-next-line @typescript-eslint/no-explicit-any
