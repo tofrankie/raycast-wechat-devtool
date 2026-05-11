@@ -26,7 +26,6 @@ export default function PreviewProject() {
 
     try {
       const qrcodePath = await previewProject(project.path, project.id);
-      /* eslint-disable @raycast/prefer-title-case */
       push(
         <ImageView
           image={qrcodePath}
@@ -59,12 +58,11 @@ export default function PreviewProject() {
                 }}
               />
               {/* TODO: Action.ShowInFinder is macOS-specific and doesn't exist on Windows. Use Action.Open or check the platform and conditionally show the appropriate action. */}
-              <Action.ShowInFinder title="Show QR Code in Finder" path={qrcodePath} />
+              <Action.ShowInFinder title="WeChat QR Code in Finder" path={qrcodePath} />
             </ActionPanel>
           }
         />,
       );
-      /* eslint-enable */
       toast.hide();
     } catch (error) {
       showFailureToast(error, { title: "Failed to Preview Project" });
